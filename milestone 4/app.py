@@ -10,7 +10,7 @@ st.set_page_config(page_title="Study Tracker", page_icon="📊", layout="wide")
 # ------------------ Load Model ------------------
 @st.cache_resource
 def load_model():
-    with open("D:\Study Tracker\marks_prediction_model.pkl", "rb") as f:
+    with open("marks_prediction_model.pkl", "rb") as f:
         model = pickle.load(f)
     return model
 
