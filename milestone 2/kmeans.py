@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
-df = pd.read_excel('./milestone 1/rawdata.xlsx')
+df = pd.read_excel('./milestone 2/student_data.xlsx')
 
 features = df[['Sleep_Hours', 'Study_Hours', 'Social_Media_Hours']]
 
@@ -35,20 +35,10 @@ df.to_excel('./milestone 2/student_clusters.xlsx', index=False)
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Scatter plot
-plt.figure(figsize=(10,6))
-sns.scatterplot(
-    data=df, 
-    x='Study_Hours', 
-    y='Social_Media_Hours', 
-    hue='Label',  # color by cluster label
-    palette={'Focused':'green', 'Distracted':'red'},
-    s=100
-)
+# pie chart
+label_counts = df['Label'].value_counts()
 
-plt.title('Student Clusters by Study and Social Media Hours')
-plt.xlabel('Study Hours')
-plt.ylabel('Social Media Hours')
-plt.legend(title='Label')
-plt.grid(True)
+plt.figure(figsize=(10,6))
+plt.pie(label_counts, labels=label_counts.index, autopct='%1.1f%%')
+plt.title('Distribution of Student Clusters')
 plt.show()

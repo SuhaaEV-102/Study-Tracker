@@ -30,7 +30,7 @@ def clean_data(df):
 
     # Rename columns for simplicity
     rename_map = {
-        'Study Hours/Day': 'StudyHours',
+        'Study Hours': 'StudyHours',
         'Sleep Hours': 'SleepHours',
         'Social Media Hours': 'SocialMedia',
         'Exercise Hours': 'Exercise',
@@ -82,7 +82,7 @@ def visualize_data(df):
     plt.show()
 
 def main():
-    file_path = 'rawdata.xlsx'
+    file_path = 'D:/Study Tracker/milestone 1/rawdata.xlsx'
     df = load_data(file_path)
     df = clean_data(df)
     perform_eda(df)

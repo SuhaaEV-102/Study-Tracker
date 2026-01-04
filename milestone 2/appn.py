@@ -7,7 +7,7 @@ from sklearn.neighbors import KNeighborsRegressor
 # -------------------- Load & Train Models --------------------
 @st.cache_data
 def load_data():
-    df = pd.read_excel("D:\Study Tracker\milestone 2\student_data_with_marks.xlsx")
+    df = pd.read_excel("D:\Study Tracker\milestone 2\student_data.xlsx")
 
     # Generate marks if not present
     if "Test_Marks" not in df.columns:

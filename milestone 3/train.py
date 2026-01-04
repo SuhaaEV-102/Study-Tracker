@@ -41,6 +41,7 @@ model = RandomForestRegressor(
 )
 model.fit(X_train, y_train)
 
+df.to_excel('D:/Study Tracker/milestone 3/student_clusters.xlsx', index=False)
 # Save model
 with open("marks_prediction_model.pkl", "wb") as f:
     pickle.dump(model, f)

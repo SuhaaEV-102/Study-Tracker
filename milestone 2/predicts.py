@@ -9,7 +9,7 @@ from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 
 # ----------------------------- Load Dataset -----------------------------
 def load_data():
-    df = pd.read_excel("D:\Study Tracker\milestone 2\student_data_with_marks.xlsx")
+    df = pd.read_excel("D:\Study Tracker\milestone 2\student_data.xlsx")
     
     # If Test_Marks doesn't exist, generate random marks
     if "Test_Marks" not in df.columns:
